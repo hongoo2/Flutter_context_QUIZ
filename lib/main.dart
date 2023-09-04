@@ -7,16 +7,22 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Builder(builder: (context) {
-        return Center(
-          child: ElevatedButton(
-              child: Text('Go to Screen A'),
-              onPressed: () => Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => ScreenA()))),
-        );
-      }),
-    );
+    return MaterialApp(home: MyHome());
+  }
+}
+
+class MyHome extends StatelessWidget {
+  const MyHome({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: Center(
+      child: ElevatedButton(
+          child: Text('Go to Screen A'),
+          onPressed: () => Navigator.push(
+              context, MaterialPageRoute(builder: (context) => ScreenA()))),
+    ));
   }
 }
 
